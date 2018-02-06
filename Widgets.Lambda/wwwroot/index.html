@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Widgets</title>
+</head>
+<body>
+  <h1>Hello World!</h1>
+  <p>
+    This is the Widgets API site
+  </p>
+  <div id="time"></div>
+  <script>
+    function startTime() {
+      var d = new Date();
+      var n = d.toLocaleTimeString();
+      document.getElementById("time").innerHTML = n;
+    }
+    startTime();
+  </script>
+</body>
+</html>

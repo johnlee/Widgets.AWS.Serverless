@@ -1,0 +1,11 @@
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\bin\Debug\netcoreapp2.0\Widgets.Lambda.deps.json
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\bin\Debug\netcoreapp2.0\Widgets.Lambda.runtimeconfig.json
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\bin\Debug\netcoreapp2.0\Widgets.Lambda.runtimeconfig.dev.json
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\bin\Debug\netcoreapp2.0\Widgets.Lambda.dll
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\bin\Debug\netcoreapp2.0\Widgets.Lambda.pdb
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\obj\Debug\netcoreapp2.0\Widgets.Lambda.csprojResolveAssemblyReference.cache
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\obj\Debug\netcoreapp2.0\Widgets.Lambda.csproj.CoreCompileInputs.cache
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\obj\Debug\netcoreapp2.0\Widgets.Lambda.AssemblyInfoInputs.cache
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\obj\Debug\netcoreapp2.0\Widgets.Lambda.AssemblyInfo.cs
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\obj\Debug\netcoreapp2.0\Widgets.Lambda.dll
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\obj\Debug\netcoreapp2.0\Widgets.Lambda.pdb

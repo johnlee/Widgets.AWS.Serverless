@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Widgets</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var url = "https://z66wcxhth2.execute-api.us-east-2.amazonaws.com/Stage/api/widgets";
+      var action = "";
+      var tableHeader = '<table><tr><th>Id</th><th>Name</th><th>Description</th><th>Created</th><th>Price</th><th>Types</th></tr>';
+
+      // Test One
+      $("#btnTest1").click(function () {
+        action = "";
+        $("#widgetId").hide();
+        $("#widgetName").hide();
+        $("#widgetPrice").hide();
+        $("#btnSave").hide();
+        $("#results").empty();
+
+        $.getJSON(url, function (data) {
+
+          var getByBatch = '<h2>Get top 3 items by batch using Object Persistence Model</h2>';
+          if (data.getByBatch.length) {
+            getByBatch += tableHeader;
+            $.each(data.getByBatch, function (i, item) {
+              getByBatch += `<tr><td>${item.id}</td><td>${item.name}</td><td>${item.description}</td><td>${item.created}</td><td>${item.price}</td><td>${JSON.stringify(item.types)}</td></tr>`;
+            });
+          }
+          getByBatch += '</table>';
+          $("#results").append(getByBatch);
+
+          var getBySingle = '<h2>Get top single item using Object Persistence Model</h2>';
+          if (data.getBySingle) {
+            getBySingle += tableHeader;
+            getBySingle += `<tr><td>${data.getBySingle.id}</td><td>${data.getBySingle.name}</td><td>${data.getBySingle.description}</td><td>${data.getBySingle.created}</td><td>${data.getBySingle.price}</td><td>${JSON.stringify(data.getBySingle.types)}</td></tr>`;
+          }
+          getBySingle += '</table>';
+          $("#results").append(getBySingle);
+
+          var getWithArbitrary = '<h2>Get widget and arbitrary data (widget types) using Object Persistence Model</h2>';
+          if (data.widgetAndType) {
+            getWithArbitrary += tableHeader;
+            getWithArbitrary += `<tr><td>${data.widgetAndType.id}</td><td>${data.widgetAndType.name}</td><td>${data.widgetAndType.description}</td><td>${data.widgetAndType.created}</td><td>${data.widgetAndType.price}</td><td>${JSON.stringify(data.widgetAndType.types)}</td ></tr >`;
+          }
+          getWithArbitrary += '</table>';
+          $("#results").append(getWithArbitrary);
+
+          var getByQuery = '<h2>Get "WDGT1" by query using Object Persistence Model</h2>';
+          if (data.query.length) {
+            getByQuery += tableHeader;
+            $.each(data.query, function (i, item) {
+              getByQuery += `<tr><td>${item.id}</td><td>${item.name}</td><td>${item.description}</td><td>${item.created}</td><td>${item.price}</td><td>${JSON.stringify(item.types)}</td></tr>`;
+            });
+          }
+          getByQuery += '</table>';
+          $("#results").append(getByQuery);
+
+          var getByScan = '<h2>Get widgets where price > 200 by scan using Object Persistence Model</h2>';
+          if (data.scan.length) {
+            getByScan += `<strong>Total Widgets Found: ${data.scan.length}</strong>`;
+            getByScan += tableHeader;
+            $.each(data.scan, function (i, item) {
+              getByScan += `<tr><td>${item.id}</td><td>${item.name}</td><td>${item.description}</td><td>${item.created}</td><td>${item.price}</td><td>${JSON.stringify(item.types)}</td></tr>`;
+            });
+          }
+          getByScan += '</table>';
+          $("#results").append(getByScan);
+        });
+      });
+
+      // Test Two
+      $("#btnTest2").click(function () {
+        action = "create";
+        $("#widgetId").hide();
+        $("#widgetName").show();
+        $("#widgetPrice").show();
+        $("#btnSave").show();
+      });
+
+      // Test Three
+      $("#btnTest3").click(function () {
+        action = "read";
+        $("#widgetId").show();
+        $("#widgetName").hide();
+        $("#widgetPrice").hide();
+        $("#btnSave").show();
+      });
+
+      // Test Four
+      $("#btnTest4").click(function () {
+        action = "update";
+        $("#widgetId").show();
+        $("#widgetName").show();
+        $("#widgetPrice").show();
+        $("#btnSave").show();
+      });
+
+      // Test Five
+      $("#btnTest5").click(function () {
+        action = "delete";
+        $("#widgetId").show();
+        $("#widgetName").hide();
+        $("#widgetPrice").hide();
+        $("#btnSave").show();
+      });
+
+      $("#btnSave").click(function () {
+        $("#results").empty();
+
+        switch (action) {
+          case "create":
+            var widget = {
+              name: $("#widgetName").val(),
+              price: $("#widgetPrice").val()
+            };
+            $.ajax({
+              url: url,
+              dataType: "json",
+              contentType: "application/json;charset=utf-8",
+              type: "POST",
+              data: JSON.stringify(widget),
+              success: function (result) {
+                var html = `<h2>Successfully Created Widget</h2>`;
+                html += `<table><tr><th>Number</th><th>Id</th></tr>`;
+                html += `<tr><td>1</td><td>${result.original.id}</td></tr>`;
+                html += `<tr><td>2</td><td>${result.lowLevel}</td></tr>`;
+                html += `<tr><td>3</td><td>${result.documentModel}</td></tr>`;
+                html += `<tr><td>4</td><td>${result.objectModel}</td></tr></table>`;
+                $("#results").append(html);
+              }
+            });
+            break;
+          case "read":
+            var id = $("#widgetId").val();
+            $.ajax({
+              url: url + '/' + id,
+              type: "GET",
+              success: function (item) {
+                var html = `<h2>Successfully Get Widget</h2>` + tableHeader;
+                html += `<tr><td>${item.id}</td><td>${item.name}</td><td>${item.description}</td><td>${item.created}</td><td>${item.price}</td><td>${JSON.stringify(item.types)}</td></tr>`;
+                $("#results").append(html);
+              },
+              error: function () {
+                $("#results").append('<h2>No widget found</h2>');
+              }
+            });
+            break;
+          case "update":
+            var widget = {
+              id: $("#widgetId").val(),
+              name: $("#widgetName").val(),
+              price: $("#widgetPrice").val()
+            };
+            $.ajax({
+              url: url,
+              dataType: "json",
+              contentType: "application/json;charset=utf-8",
+              type: "PUT",
+              data: JSON.stringify(widget),
+              success: function (result) {
+                $("#btnSave").hide();
+                $("#results").append("<strong>Successfully Updated</strong>");
+              }
+            });
+            break;
+          case "delete":
+            var id = $("#widgetId").val();
+            $.ajax({
+              url: url + '/' + id,
+              dataType: "json",
+              contentType: "application/json;charset=utf-8",
+              type: "DELETE",
+              success: function (result) {
+                $("#btnSave").hide();
+                $("#results").append("<strong>Successfully Deleted</strong>");
+              }
+            });
+            break;
+        }
+      });
+    });
+  </script>
+  <style>
+    table {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+  </style>
+</head>
+<body>
+  <h1>Widgets Test</h1>
+  <p>
+    This is a static front end page to test AWS Widgets Project
+  </p>
+  <button id="btnTest1">1.AllWidgets</button>
+  <button id="btnTest2">2.CreateWidget</button>
+  <button id="btnTest3">3.ReadWidget</button>
+  <button id="btnTest4">4.UpdateWidget</button>
+  <button id="btnTest5">5.DeleteWidget</button>
+  <br />
+  <p>
+    <input type="text" id="widgetId" name="widgetId" placeholder="Enter Widget Id" hidden> &nbsp;
+    <input type="text" id="widgetName" name="widgetName" placeholder="Enter Widget Name" hidden> &nbsp;
+    <input type="number" id="widgetPrice" name="widgetPrice" placeholder="Enter Widget Price" hidden> &nbsp;
+    <button id="btnSave" hidden>Submit</button>
+  </p>
+  <br />
+  <div id="results"></div>
+</body>
+</html>

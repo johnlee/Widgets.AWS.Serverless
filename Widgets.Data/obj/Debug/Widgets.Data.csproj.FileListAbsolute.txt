@@ -1,0 +1,13 @@
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\bin\Debug\Widgets.Data.dll.config
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\bin\Debug\Widgets.Data.dll
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\bin\Debug\Widgets.Data.pdb
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\bin\Debug\AWSSDK.Core.dll
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\bin\Debug\AWSSDK.DynamoDBv2.dll
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\bin\Debug\AWSSDK.Core.pdb
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\bin\Debug\AWSSDK.Core.xml
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\bin\Debug\AWSSDK.DynamoDBv2.pdb
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\bin\Debug\AWSSDK.DynamoDBv2.xml
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\obj\Debug\Widgets.Data.dll
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\obj\Debug\Widgets.Data.pdb
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\obj\Debug\Widgets.Data.csproj.CoreCompileInputs.cache
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Data\obj\Debug\Widgets.Data.csprojResolveAssemblyReference.cache

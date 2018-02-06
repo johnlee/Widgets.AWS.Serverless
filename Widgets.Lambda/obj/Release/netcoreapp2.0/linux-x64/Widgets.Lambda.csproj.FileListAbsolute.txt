@@ -1,0 +1,10 @@
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\bin\Release\netcoreapp2.0\linux-x64\Widgets.Lambda.deps.json
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\bin\Release\netcoreapp2.0\linux-x64\Widgets.Lambda.runtimeconfig.json
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\bin\Release\netcoreapp2.0\linux-x64\Widgets.Lambda.runtimeconfig.dev.json
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\bin\Release\netcoreapp2.0\linux-x64\Widgets.Lambda.dll
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\bin\Release\netcoreapp2.0\linux-x64\Widgets.Lambda.pdb
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\obj\Release\netcoreapp2.0\linux-x64\Widgets.Lambda.csproj.CoreCompileInputs.cache
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\obj\Release\netcoreapp2.0\linux-x64\Widgets.Lambda.AssemblyInfoInputs.cache
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\obj\Release\netcoreapp2.0\linux-x64\Widgets.Lambda.AssemblyInfo.cs
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\obj\Release\netcoreapp2.0\linux-x64\Widgets.Lambda.dll
+C:\LLNL\Projects\Z\AWS\Widgets\Widgets.Lambda\obj\Release\netcoreapp2.0\linux-x64\Widgets.Lambda.pdb

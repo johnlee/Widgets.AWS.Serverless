@@ -1,0 +1,9 @@
+{
+  "name": "widgets.web",
+  "version": "0.0.0",
+  "description": "Widgets.Web",
+  "main": "server.js",
+  "author": {
+    "name": "lee1048"
+  }
+}
